@@ -11,9 +11,46 @@
 
 # Introduction
 
+The focus of this lab is on Mutation Testing and GUI Testing. Mutants will be injected into the JFreeChart classes used in Assignment 3 and will be tested against the test cases written for Assignment 3. The GUI testing will be completed on a website using the Selenium IDE. 
+
 # Analysis of 10 Mutants of the Range class 
 
+Killed (5):
+
+1.
+
+    public double getLowerBound() {
+        if (lower > upper) {
+            String msg = "Range(double, double): require lower (" + lower
+                + ") <= upper (" + upper + ").";
+            throw new IllegalArgumentException(msg);
+        }
+        return this.lower;
+    }
+
+2.
+
+    public double getLowerBound() {
+        if (lower > upper) {
+            String msg = "Range(double, double): require lower (" + lower
+                + ") <= upper (" + upper + ").";
+            throw new IllegalArgumentException(msg);
+        }
+        return this.lower;
+    }
+
+    
+
 # Report all the statistics and the mutation score for each test class
+
+Initial Mutation Score of Range Tests:
+
+![](range_initial.png)
+
+Initial Mutation Score of DataUtilities Tests:
+
+![](datautil_initial.png)
+
 
 # Analysis drawn on the effectiveness of each of the test classes
 
@@ -22,6 +59,12 @@
 # A discussion of what could have been done to improve the mutation score of the test suites
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+
+By introducing small alterations to the source code, mutation testing evaluates the effectiveness of existing test cases in detecting these changes. This process helps uncover weaknesses in the test suite, ensuring that the tests are thorough and capable of catching potential bugs.
+
+One advantage of mutation testing is its ability to identify redundant or ineffective test cases, leading to more efficient testing strategies. Additionally, it promotes a deeper understanding of the codebase and encourages developers to write more resilient tests.
+
+A disadvantage of mutation testing is that it can be computationally intensive and time-consuming, especially for large codebases, which may deter its widespread adoption.
 
 # Explain your SELENUIM test case design process
 
@@ -51,7 +94,7 @@ Each functionality was tested with various test data to ensure a certain degree 
 # How the team work/effort was divided and managed
 
 Part 1: 
-.........
+This section was completed synchronously by the entire group. The team ran the Pit Mutation Tests, analyzed the results based on the test cases written in assignment 3, and analyzed 10 different mutants killed or survived by Range tests. Finally, the group implemented updates to increase the mutation scores of each test suite.
 
 Part 2:
 Each member was responsible for designing GUI test cases for 1 one the core website functionalities (minimum 2 test cases per functionality). After the test cases were for each functionality were designed. Each member implemented the test cases designed by another member in Selenium. This allowed for team members to double check the developed test cases with a second pair of eyes. 
